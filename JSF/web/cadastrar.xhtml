@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./menu.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <h:form>
+            <h1 text-align="center">Dados do Contato</h1>
+            
+            <label>Nome: </label> <h:inputText id="nome" value="#{contatoBean.nome}" required="true" requiredMessage="Obrigatório preencher o campo Nome..."/> 
+            <label>Telefone: </label> <h:inputText id="telefone" value="#{contatoBean.telefone}"  required="true" requiredMessage="Obrigatório preencher o campo telefone"/> 
+            <h:selectOneRadio>
+                <f:selectItem itemValue="celular" itemLabel="Celular"/>
+                <f:selectItem itemValue="casa" itemLabel="Casa"/>
+                <f:selectItem itemValue="trabalho" itemLabel="Trabalho"/>
+                <f:selectItem itemValue="outro" itemLabel="Outro"/>
+            </h:selectOneRadio>
+            <br/>
+            <h:selectOneMenu value="{contato.tipo}">
+                <f:selectItem itemValue="Amigo"/>
+                <f:selectItem itemValue="Familia"/>
+            </h:selectOneMenu>
+            <label>Email: </label> <h:inputText id="telefone" value="#{contatoBean.telefone}"  required="true" requiredMessage="Obrigatório preencher o campo email"/> 
+            <label>Definir como favorito: </label> <h:selectBooleanCheckbox value="contato.favorito"/>
+            
+           
+        </h:form>
+        
+    </ui:define>
+
+</ui:composition>
