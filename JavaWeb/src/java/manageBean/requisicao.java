@@ -1,13 +1,12 @@
 package manageBean;
 
 import java.util.GregorianCalendar;
-import javax.inject.Named;
-import javax.enterprise.context.Dependent;
-import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
+
 @ManagedBean(name = "requisicao")
 @RequestScoped
 public class requisicao {
@@ -53,10 +52,18 @@ public class requisicao {
     public String getSenha() {
         return senha;
     }
+   
 
     public void setSenha(String senha) {
         this.senha = senha;
     }
     
+    public escopo getSessaoLoginUsuario() {
+        return sessaoLoginUsuario;
+    }
+
+    public void setSessaoLoginUsuario(escopo sessaoLoginUsuario) {
+        this.sessaoLoginUsuario = sessaoLoginUsuario;
+    }
     
 }
