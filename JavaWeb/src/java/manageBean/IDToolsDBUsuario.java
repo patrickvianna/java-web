@@ -21,14 +21,23 @@ public class IDToolsDBUsuario {
     }
     
     public PessoaInterna verificar(String nome, Integer senha) {
-        System.out.println("Login: " + nome);
+        try
+        {
+            System.out.println("Login: " + nome);
         
-        if(senha.equals(pessoasCadastradas.get(nome))) {
-            PessoaInterna p = new PessoaInterna();
-            p.setNome(nome);
-            p.setSenha(pessoasCadastradas.get(nome));
-            return p;
+            if(senha.equals(pessoasCadastradas.get(nome))) {
+                PessoaInterna p = new PessoaInterna();
+                p.setNome(nome);
+                p.setSenha(pessoasCadastradas.get(nome));
+                return p;
+            }else {
+
+            }
+        }catch (Exception ex){
+            System.out.println("EEROO:: " + ex);
         }
+        
+            
         return null;
     }
     

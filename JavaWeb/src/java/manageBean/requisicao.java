@@ -11,7 +11,7 @@ import javax.faces.context.FacesContext;
 @RequestScoped
 public class requisicao {
     private String login;
-    private String senha;
+    private Integer senha;
     
     private IDToolsDBUsuario idToolsDBUsuario = new IDToolsDBUsuario();
     
@@ -23,7 +23,7 @@ public class requisicao {
 
     public String logar(){
         String navegacao = "";
-        PessoaInterna p = idToolsDBUsuario.verificar(login, senha.length());
+        PessoaInterna p = idToolsDBUsuario.verificar(login, senha);
         
         if(p != null) {
             sessaoLoginUsuario.setLoginSessao(p.getNome());
@@ -49,12 +49,12 @@ public class requisicao {
         this.login = login;
     }
 
-    public String getSenha() {
+    public Integer getSenha() {
         return senha;
     }
    
 
-    public void setSenha(String senha) {
+    public void setSenha(Integer senha) {
         this.senha = senha;
     }
     
